@@ -23,5 +23,10 @@ app.get('/hit', (req, res) => {
    res.sendStatus(200)
 })
 
+app.get('/rollbarTest', (req, res) => {
+   rollbar.log('Rollbar test successful!')
+   res.sendStatus(200)
+})
+
 app.listen(4000,
    () => console.log(`server running on 4000`))
