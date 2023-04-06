@@ -17,5 +17,11 @@ rollbar.log('hosted hit')
 
 app.use(express.static(`${__dirname}/public`))
 
+app.get('/hit', (req, res) => {
+   console.log('hit')
+   rollbar.log('endpoint hit')
+   res.sendStatus(200)
+})
+
 app.listen(4000,
    () => console.log(`server running on 4000`))
